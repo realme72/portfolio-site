@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gaurav Bharti | About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=36">
+  <style>
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+        <line x1="0" y1="0" x2="0" y2="6" stroke="#c0caf5" stroke-width="1" opacity=".35"/>
+      </pattern>
+      <pattern id="hatchW" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(80)">
+        <line x1="0" y1="0" x2="0" y2="7" stroke="#fff" stroke-width="1" opacity=".22"/>
+      </pattern>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <a class="logo" href="./" aria-label="Gaurav Bharti, home">
+      <span class="mascot" data-mascot aria-hidden="true"></span>
+      <span class="prompt"><span class="tilde">~/</span>gaurav<span class="cursor" aria-hidden="true"></span></span>
+    </a>
+    <nav class="nav tabbar" aria-label="Main">
+      <a class="tab tab-work" href="./#work"><span class="tab-icon" aria-hidden="true">{}</span>work<span class="ext">.ts</span></a>
+      <a class="tab tab-about active" href="about.html" aria-current="page"><span class="tab-icon" aria-hidden="true">#</span>about<span class="ext">.md</span></a>
+      <a class="tab tab-contact" href="#contact"><span class="tab-icon" aria-hidden="true">&gt;_</span>contact<span class="ext">.sh</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about-hero">
+      <div class="boy-wrap">
+        <svg class="scene" viewBox="0 0 900 560" role="img" aria-label="Illustration of Gaurav's room: at night he codes and sips coffee at his desk; by day he stretches and sleeps while the window shows a sunny garden"></svg>
+        <div class="daynight" role="group" aria-label="Time of day">
+          <button type="button" data-mode="day" aria-label="Day: time to sleep" title="Day">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+          </button>
+          <button type="button" data-mode="night" aria-label="Night: time to code" title="Night">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          </button>
+        </div>
+        <button class="play" type="button" aria-label="Pause animation">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#c0caf5"><rect x="5" y="3" width="5" height="18" rx="1.5"/><rect x="14" y="3" width="5" height="18" rx="1.5"/></svg>
+        </button>
+      </div>
+
+      <div class="notes">
+        <article class="paper">
+          <svg class="pin" viewBox="0 0 50 80"><circle cx="25" cy="22" r="18" fill="#7dcfff" stroke="#c0caf5" stroke-width="3"/><path d="M25 40 V76" stroke="#c0caf5" stroke-width="4" stroke-linecap="round"/></svg>
+          <h2>About me; the basics</h2>
+          <p class="lead">I'm a software engineer who builds <b>scalable distributed systems</b> for e-commerce and payments.</p>
+          <p>Over <span data-years>4</span>+ years at <b>Tata 1mg</b>, <b>Morgan Stanley</b> and <b>Wizcommerce</b>, I've shipped systems across <b>B2B and B2C commerce</b>, <b>payment workflows</b> and <b>third-party integrations</b>. That ranges from health partners like eKincare and MediBuddy at 1mg to payment gateways like Revolut Pay at Wizcommerce, each built on clear, versioned contracts so partners plug in safely and failures stay contained.</p>
+        </article>
+
+        <article class="paper">
+          <svg class="pin" viewBox="0 0 50 80"><circle cx="25" cy="22" r="18" fill="#9ece6a" stroke="#c0caf5" stroke-width="3"/><path d="M25 40 V76" stroke="#c0caf5" stroke-width="4" stroke-linecap="round"/></svg>
+          <h2>What gets me going</h2>
+          <p class="lead">Software that gets <b>easier to change</b> as it grows, not harder.</p>
+          <p>I lean on <b>design patterns and SOLID principles</b> to shape systems so the next feature is a small, safe addition instead of a rewrite. When I rebuilt our payment gateway layer around Strategy and Registry patterns, adding a new gateway went from touching core logic to dropping in a plug-in.</p>
+          <p>I also design for the failures nobody sees until 3 a.m.: duplicate webhooks, retries that could charge twice, tenants racing for the same order number. <b>Idempotency, state machines and event-driven flows</b> keep things correct when networks and providers don't cooperate.</p>
+          <p>Lately I'm bringing that same discipline to <b>LLMs, RAG and vector search</b>, and shipping my own products, like <a href="https://resumesmith.in" target="_blank" rel="noopener">ResumeSmith</a>.</p>
+        </article>
+
+        <article class="paper">
+          <svg class="pin" viewBox="0 0 50 80"><circle cx="25" cy="22" r="18" fill="#f7768e" stroke="#c0caf5" stroke-width="3"/><path d="M25 40 V76" stroke="#c0caf5" stroke-width="4" stroke-linecap="round"/></svg>
+          <h2>Where I've worked</h2>
+          <p>I've spent the last <span data-years>4</span>+ years building <b>scalable distributed systems</b> across <b>B2B and B2C e-commerce</b> and <b>payments</b>, at <b>Wizcommerce</b>, <b>Morgan Stanley</b> (via Teamware Solutions) and <b>Tata 1mg</b>.</p>
+          <p>Along the way I've owned the integrations that businesses depend on: payment gateways like <b>Revolut Pay</b> and health partners like <b>eKincare</b> and <b>MediBuddy</b>, each built on clear contracts so partners plug in cleanly and failures stay contained. I also designed an <b>SMS notification service</b> with delivery integration and status updates, built on <b>Amazon SQS</b> to handle high-concurrency load.</p>
+        </article>
+
+        <article class="paper">
+          <svg class="pin" viewBox="0 0 50 80"><circle cx="25" cy="22" r="18" fill="#bb9af7" stroke="#c0caf5" stroke-width="3"/><path d="M25 40 V76" stroke="#c0caf5" stroke-width="4" stroke-linecap="round"/></svg>
+          <h2>My toolbox</h2>
+          <dl class="toolbox">
+            <dt>Backend</dt><dd class="chips left"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">C++</span><span class="chip">SQL</span><span class="chip">FastAPI</span><span class="chip">Django</span><span class="chip">Flask</span></dd>
+            <dt>System design</dt><dd class="chips left"><span class="chip">Distributed systems</span><span class="chip">Microservices</span><span class="chip">Event-driven</span><span class="chip">Concurrency</span><span class="chip">API design</span><span class="chip">Multi-tenancy</span></dd>
+            <dt>Data &amp; messaging</dt><dd class="chips left"><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">Redis</span><span class="chip">Elasticsearch</span><span class="chip">Kafka</span><span class="chip">Vector databases</span></dd>
+            <dt>AI / GenAI</dt><dd class="chips left"><span class="chip">LLMs</span><span class="chip">RAG</span><span class="chip">Embeddings</span><span class="chip">Vector search</span><span class="chip">LangGraph</span></dd>
+            <dt>Cloud &amp; ops</dt><dd class="chips left"><span class="chip">AWS (SQS, S3, EC2)</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Sentry</span><span class="chip">New Relic</span></dd>
+          </dl>
+        </article>
+
+        <article class="paper tilt">
+          <svg class="pin" viewBox="0 0 50 80"><circle cx="25" cy="22" r="18" fill="#e0af68" stroke="#c0caf5" stroke-width="3"/><path d="M25 40 V76" stroke="#c0caf5" stroke-width="4" stroke-linecap="round"/></svg>
+          <h2>What I'm looking for</h2>
+          <p>A senior software engineering role on a team that owns hard problems: <b>payments, distributed systems, or AI products running in production</b>. I do my best work with real ownership, from design reviews through to production, alongside people who care about getting it right.</p>
+          <p class="cta"><a href="#contact">Let's talk →</a> <a data-resume target="_blank" rel="noopener">View résumé ↗</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="big-badges" data-badges data-big></div>
+      <p class="hint" style="left:calc(50% - 400px); top:84px">poke the critters<br>for a surprise!</p>
+      <a class="email" data-email></a>
+      <button class="copy" type="button" data-copy>Copy Email ⧉</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Thank you for being here.</span>
+    <nav>
+      <a data-mailto aria-label="Email"><svg viewBox="0 0 24 24" fill="#c0caf5"><path d="M2 6.5 12 13l10-6.5V5H2zM2 8.8V19h20V8.8l-10 6.5z"/></svg></a>
+      <a data-linkedin target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="#c0caf5"><path d="M4 8h4v13H4zM6 2a2.2 2.2 0 1 1 0 4.4A2.2 2.2 0 0 1 6 2zm4 6h3.8v1.8h.1c.5-1 1.8-2.1 3.8-2.1 4 0 4.8 2.6 4.8 6V21h-4v-6.3c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21h-4z"/></svg></a>
+      <a data-github target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="#c0caf5"><path d="M12 1.5a10.5 10.5 0 0 0-3.3 20.5c.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.3-3.5-1.3-.5-1.2-1.2-1.5-1.2-1.5-.9-.7.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.5 1.1 3.1.9.1-.7.4-1.1.7-1.4-2.3-.3-4.8-1.2-4.8-5.2 0-1.1.4-2.1 1.1-2.8-.1-.3-.5-1.4.1-2.8 0 0 .9-.3 2.9 1.1a10 10 0 0 1 5.2 0c2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.5.1 2.8.7.7 1.1 1.7 1.1 2.8 0 4-2.5 4.9-4.8 5.2.4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5A10.5 10.5 0 0 0 12 1.5z"/></svg></a>
+      <a data-resume target="_blank" rel="noopener">Resume</a>
+      <a href="#top" onclick="scrollTo({top:0,behavior:'smooth'});return false">Back to top ↑</a>
+    </nav>
+  </footer>
+
+  <script src="script.js?v=33"></script>
+  <script src="scene.js?v=36"></script>
+</body>
+</html>

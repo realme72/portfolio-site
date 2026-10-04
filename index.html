@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gaurav Bharti | Portfolio</title>
+  <meta name="description" content="Step up to my desk; view my projects, say hi to a little desk bot, fidget with my stuff.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=16">
+</head>
+<body>
+  <!-- shared SVG patterns -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="3"/>
+        <feDisplacementMap in="SourceGraphic" scale="2.2"/>
+      </filter>
+      <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+        <line x1="0" y1="0" x2="0" y2="6" stroke="#c0caf5" stroke-width="1" opacity=".35"/>
+      </pattern>
+      <linearGradient id="phoneGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#7dcfff"/><stop offset="1" stop-color="#f7768e"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div class="loader"><span>Getting Gaurav's desk ready</span></div>
+
+  <header class="site-header">
+    <a class="logo" href="./" aria-label="Gaurav Bharti, home">
+      <span class="mascot" data-mascot aria-hidden="true"></span>
+      <span class="prompt"><span class="tilde">~/</span>gaurav<span class="cursor" aria-hidden="true"></span></span>
+    </a>
+    <nav class="nav tabbar" aria-label="Main">
+      <a class="tab tab-work active" href="#work" aria-current="page"><span class="tab-icon" aria-hidden="true">{}</span>work<span class="ext">.ts</span></a>
+      <a class="tab tab-about" href="about.html"><span class="tab-icon" aria-hidden="true">#</span>about<span class="ext">.md</span></a>
+      <a class="tab tab-contact" href="#contact"><span class="tab-icon" aria-hidden="true">&gt;_</span>contact<span class="ext">.sh</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Gaurav's desk.</h1>
+        <p class="tag">Gaurav Bharti; software engineer with <span data-years>4</span>+ years building payment, order and distributed systems at scale. Based in Bengaluru, India.</p>
+      </div>
+
+      <div class="desk">
+        <div class="bot">
+          <div class="bubble" role="status" aria-live="polite">
+            <span class="name">BYTE</span>
+            <svg class="tail" viewBox="0 0 50 22" preserveAspectRatio="none"><path d="M50 2 Q24 6 2 12 Q24 18 50 20" fill="#16161e" stroke="#c0caf5" stroke-width="2" stroke-linejoin="round"/></svg>
+            <p class="say"></p>
+            <div class="controls">
+              <div class="dots"></div>
+              <span class="count"></span>
+            </div>
+          </div>
+        </div>
+        <div class="stage-wrap"><div class="stage"></div></div>
+        <button class="reset" type="button">Reset Desk
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c0caf5" stroke-width="3" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 3v6h-6"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="projects" id="work">
+      <h2 class="label doodle">
+        <svg class="doodle-stars" viewBox="0 0 60 50" aria-hidden="true"><path d="M20 4 L23 16 L35 19 L23 22 L20 34 L17 22 L5 19 L17 16 Z"/><path d="M46 26 L48 33 L55 35 L48 37 L46 44 L44 37 L37 35 L44 33 Z"/></svg>
+        <span class="doodle-text">Featured projects</span>
+        <svg class="doodle-line" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 14 C40 4 60 22 96 12 S160 4 196 14 S260 22 296 8"/></svg>
+        <svg class="doodle-arrow" viewBox="0 0 120 100" aria-hidden="true"><path pathLength="1" d="M6 12 C40 0 82 8 92 38 C98 58 84 70 74 61 C64 52 80 38 96 50 C106 58 110 72 106 88"/><path pathLength="1" d="M95 80 L106 90 L114 77"/></svg>
+      </h2>
+      <p class="work-intro">A few systems I've designed and owned end to end, from the architecture to production.</p>
+      <div class="bento">
+
+        <article class="card span-2 accent-green">
+          <header class="win"><i></i><i></i><i></i><span>payments/revolut_pay.py</span><em>Wizcommerce</em></header>
+          <div class="card-body split">
+            <div>
+              <p class="metric">$10M+<small>/year</small></p>
+              <h3>Payments platform</h3>
+              <p>Architected the Revolut Pay integration end to end: webhook-driven state management with idempotent retries, so a duplicate event or a flaky provider can never charge a customer twice. Then re-architected the gateway layer for <b>10+ providers</b> with Strategy + Registry patterns, so new gateways ship without touching core logic.</p>
+              <ul class="tags"><li>state machines</li><li>webhooks</li><li>idempotency</li><li>design patterns</li></ul>
+            </div>
+            <pre class="code" aria-hidden="true"><span class="k-p">@transition</span>(PENDING <span class="k-c">→</span> CAPTURED)
+<span class="k-b">def</span> <span class="k-y">on_webhook</span>(evt):
+    <span class="k-b">if</span> seen(evt.id):
+        <span class="k-b">return</span> <span class="k-m"># idempotent</span>
+    payment.advance(evt)
+
+<span class="k-m"># gateways: 10+ plug-ins</span>
+<span class="k-y">REGISTRY</span>[<span class="k-g">"revolut"</span>] = RevolutPay
+<span class="k-y">REGISTRY</span>[<span class="k-g">"stripe"</span>]  = Stripe</pre>
+          </div>
+        </article>
+
+        <article class="card accent-cyan">
+          <header class="win"><i></i><i></i><i></i><span>orders/id_service.py</span><em>Wizcommerce</em></header>
+          <div class="card-body">
+            <p class="metric">0<small> collisions</small></p>
+            <h3>Multi-tenant ID service</h3>
+            <p>Order IDs for <b>30,000+ orders/day</b> across <b>400+ tenants</b>, collision-free under high concurrency.</p>
+            <div class="pipe" aria-hidden="true"><span>tenant</span><b>→</b><span>sequence</span><b>→</b><span class="ok">ORD-4012-0091</span></div>
+            <ul class="tags"><li>concurrency</li><li>multi-tenancy</li></ul>
+          </div>
+        </article>
+
+        <article class="card accent-pink">
+          <header class="win"><i></i><i></i><i></i><span>security/alerts.log</span><em>Morgan Stanley</em></header>
+          <div class="card-body">
+            <p class="metric">100%<small> dupes gone</small></p>
+            <h3>Vulnerability alerting</h3>
+            <p>Real-time alerts for <b>100+ enterprise apps</b>, 20% faster to notify, with a fingerprint-based dedup engine.</p>
+            <pre class="term" aria-hidden="true"><span class="k-r">CVE-2025-1234</span> app-api   <span class="k-g">sent</span>
+<span class="k-r">CVE-2025-1234</span> app-api   <span class="k-m">dedup ✓</span>
+<span class="k-y">CVE-2025-0871</span> billing   <span class="k-g">sent</span></pre>
+            <ul class="tags"><li>python</li><li>deduplication</li><li>alerting</li></ul>
+          </div>
+        </article>
+
+        <article class="card accent-purple">
+          <header class="win"><i></i><i></i><i></i><span>middleware/errors.py</span><em>Morgan Stanley</em></header>
+          <div class="card-body">
+            <p class="metric">250+<small> APIs</small></p>
+            <h3>Error-handling middleware</h3>
+            <p>One standard layer across 250+ REST APIs: every unhandled exception captured, debugging time down <b>~30%</b>.</p>
+            <pre class="term" aria-hidden="true"><span class="k-r">500</span> /orders   <span class="k-c">→</span> <span class="k-g">captured</span> <span class="k-m">trace #a91f</span>
+<span class="k-y">422</span> /payments <span class="k-c">→</span> <span class="k-g">captured</span> <span class="k-m">trace #77c2</span>
+<span class="k-r">503</span> /alerts   <span class="k-c">→</span> <span class="k-g">captured</span> <span class="k-m">trace #0be4</span></pre>
+            <ul class="tags"><li>middleware</li><li>observability</li></ul>
+          </div>
+        </article>
+
+        <article class="card accent-yellow">
+          <header class="win"><i></i><i></i><i></i><span>checkout/validate.py</span><em>Tata 1mg</em></header>
+          <div class="card-body">
+            <p class="metric">1M+<small> orders/mo</small></p>
+            <h3>Faster order checkout</h3>
+            <p>Ran inventory, pricing and SLA checks in parallel instead of one by one, cutting pre-confirmation latency.</p>
+            <div class="bars" aria-hidden="true"><span style="--w:90%">sequential</span><span style="--w:38%" class="fast">parallel</span></div>
+            <ul class="tags"><li>asyncio</li><li>performance</li></ul>
+          </div>
+        </article>
+
+        <a class="card span-2 accent-blue live" href="https://resumesmith.in" target="_blank" rel="noopener">
+          <header class="win"><i></i><i></i><i></i><span>resumesmith.in</span><em class="live-dot">live</em></header>
+          <div class="card-body split">
+            <div>
+              <p class="metric small">ResumeSmith <span class="arrow">↗</span></p>
+              <h3>Side project, shipped</h3>
+              <p>A free resume builder with real-time preview and PDF/DOCX export. Designed, built and deployed solo, from idea to production.</p>
+              <ul class="tags"><li>full-stack</li><li>product</li><li>shipped</li></ul>
+            </div>
+            <div class="mock" aria-hidden="true">
+              <div class="mock-form"><i></i><i></i><i class="short"></i><i></i><b>Export PDF</b></div>
+              <div class="mock-page"><strong></strong><em></em><i></i><i></i><i class="short"></i><em></em><i></i><i class="short"></i></div>
+            </div>
+          </div>
+        </a>
+
+        <article class="card accent-green">
+          <header class="win"><i></i><i></i><i></i><span>notify/sms_service.py</span><em>Tata 1mg</em></header>
+          <div class="card-body">
+            <p class="metric">0→1<small> built</small></p>
+            <h3>SMS notification service</h3>
+            <p>Designed and launched from scratch: schema, provider integration and delivery tracking for order updates to <b>millions of users</b>.</p>
+            <div class="pipe" aria-hidden="true"><span>order event</span><b>→</b><span>provider</span><b>→</b><span class="ok">delivered ✓</span></div>
+            <ul class="tags"><li>system design</li><li>integrations</li></ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="big-badges" data-badges data-big></div>
+      <p class="hint" style="left:calc(50% - 400px); top:84px">poke the critters<br>for a surprise!</p>
+      <a class="email" data-email></a>
+      <button class="copy" type="button" data-copy>Copy Email ⧉</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Thank you for being here.</span>
+    <nav>
+      <a data-mailto aria-label="Email"><svg viewBox="0 0 24 24" fill="#c0caf5"><path d="M2 5h20v14H2z" opacity=".0"/><path d="M2 6.5 12 13l10-6.5V5H2zM2 8.8V19h20V8.8l-10 6.5z"/></svg></a>
+      <a data-linkedin target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="#c0caf5"><path d="M4 8h4v13H4zM6 2a2.2 2.2 0 1 1 0 4.4A2.2 2.2 0 0 1 6 2zm4 6h3.8v1.8h.1c.5-1 1.8-2.1 3.8-2.1 4 0 4.8 2.6 4.8 6V21h-4v-6.3c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21h-4z"/></svg></a>
+      <a data-github target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="#c0caf5"><path d="M12 1.5a10.5 10.5 0 0 0-3.3 20.5c.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.3-3.5-1.3-.5-1.2-1.2-1.5-1.2-1.5-.9-.7.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.5 1.1 3.1.9.1-.7.4-1.1.7-1.4-2.3-.3-4.8-1.2-4.8-5.2 0-1.1.4-2.1 1.1-2.8-.1-.3-.5-1.4.1-2.8 0 0 .9-.3 2.9 1.1a10 10 0 0 1 5.2 0c2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.5.1 2.8.7.7 1.1 1.7 1.1 2.8 0 4-2.5 4.9-4.8 5.2.4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5A10.5 10.5 0 0 0 12 1.5z"/></svg></a>
+      <a data-resume target="_blank" rel="noopener">Resume</a>
+      <a href="#top" onclick="scrollTo({top:0,behavior:'smooth'});return false">Back to top ↑</a>
+    </nav>
+  </footer>
+
+  <script src="script.js?v=16"></script>
+  <script src="desk.js?v=16"></script>
+</body>
+</html>
