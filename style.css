@@ -105,6 +105,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
   display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(16px, 3vw, 48px); align-items: center;
 }
 .hero-text { max-width: 560px; justify-self: end; }
+.hero .hook { margin-top: 14px; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.45; color: #fff; padding-left: 14px; border-left: 3px solid var(--green); }
+.hero .hook em { font-style: normal; color: var(--green); font-weight: 700; }
 .hero .setup { margin-top: 18px; font-family: "Caveat", cursive; font-weight: 700; font-size: clamp(22px, 1.9vw, 27px); line-height: 1.2; color: var(--yellow); display: flex; align-items: flex-end; gap: 8px; }
 .setup-arrow { width: 70px; flex: none; overflow: visible; }
 .setup-arrow path { fill: none; stroke: var(--yellow); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
@@ -592,3 +594,20 @@ a.paper a { color: var(--cyan); text-decoration-thickness: 2px; }
   background: var(--bg-deep); border: 1px solid var(--line); color: var(--ink); }
 .wins li::before { content: "✓ "; color: var(--green); font-weight: 700; }
 @media (max-width: 600px) { 
+/* ---------- phones ---------- */
+.about-hero > * { min-width: 0; }
+@media (max-width: 900px) {
+  .about-hero { grid-template-columns: minmax(0, 1fr); }
+  .portrait { margin: 0 auto; }
+}
+@media (max-width: 640px) {
+  .projects .label { font-size: 40px; margin-left: 34px; }
+  .big-badges { gap: 14px; }
+  .big-badges .badge { width: 96px; }
+  .contact .hint { display: none; }
+  .ide-pane { padding: 16px 16px 18px; font-size: 15px; }
+  .ts { font-size: 11.5px; }
+  .email { font-size: clamp(26px, 7.4vw, 40px); overflow-wrap: anywhere; padding: 0 16px; }
+  .prompt { white-space: nowrap; font-size: 14px; }
+  .logo { padding: 8px 12px 8px 8px; gap: 6px; }
+}
