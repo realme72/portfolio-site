@@ -154,3 +154,20 @@ window.addEventListener("load", () => {
   const l = document.querySelector(".loader");
   if (l) setTimeout(() => l.classList.add("done"), 700);
 });
+
+// editor-style tabs (About page)
+document.querySelectorAll("[data-tabs]").forEach((box) => {
+  const tabs = [...box.querySelectorAll('[role="tab"]')];
+  const pick = (t) => tabs.forEach((x) => {
+    const on = x === t;
+    x.setAttribute("aria-selected", on);
+    document.getElementById(x.getAttribute("aria-controls")).hidden = !on;
+  });
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => pick(t));
+    t.addEventListener("keydown", (e) => {
+      const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (d) { const n = tabs[(i + d + tabs.length) % tabs.length]; pick(n); n.focus(); }
+    });
+  });
+});

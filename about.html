@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=36">
+  <link rel="stylesheet" href="style.css?v=25">
   <style>
   </style>
 </head>
@@ -38,20 +38,56 @@
   <main>
     <section class="about-hero">
       <div class="boy-wrap">
-        <svg class="scene" viewBox="0 0 900 560" role="img" aria-label="Illustration of Gaurav's room: at night he codes and sips coffee at his desk; by day he stretches and sleeps while the window shows a sunny garden"></svg>
-        <div class="daynight" role="group" aria-label="Time of day">
-          <button type="button" data-mode="day" aria-label="Day: time to sleep" title="Day">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
-          </button>
-          <button type="button" data-mode="night" aria-label="Night: time to code" title="Night">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
-          </button>
-        </div>
-        <button class="play" type="button" aria-label="Pause animation">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="#c0caf5"><rect x="5" y="3" width="5" height="18" rx="1.5"/><rect x="14" y="3" width="5" height="18" rx="1.5"/></svg>
-        </button>
+        <figure class="portrait">
+          <header class="win"><i></i><i></i><i></i><span>~/gaurav/me.jpg</span></header>
+          <img src="assets/me.jpg" width="1000" height="977" alt="Gaurav Bharti, smiling, in a black t-shirt against a red background">
+          <figcaption>hi, that's me!</figcaption>
+        </figure>
       </div>
 
+      <div class="intro">
+        <p class="status"><span class="live"></span>Open to senior backend &amp; distributed systems roles</p>
+        <h1>Backend systems are easy to build. I build them <em>right</em>, where every request, retry and failure matters.</h1>
+        <p class="sub">Software engineer, <span data-years>4</span>+ years on payments, orders and distributed systems at <b>Wizcommerce</b>, <b>Morgan Stanley</b> and <b>Tata 1mg</b>. Based in Bengaluru.</p>
+        <p class="cta"><a data-resume target="_blank" rel="noopener">View résumé ↗</a> <a href="#contact">Let's talk →</a></p>
+
+        <div class="ide" data-tabs>
+          <div class="ide-bar" role="tablist" aria-label="More about me">
+            <i></i><i></i><i></i>
+            <button type="button" role="tab" aria-selected="true" aria-controls="t-build" id="tab-build"><span class="k-b">#</span> how-i-build.md</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="t-tools" id="tab-tools"><span class="k-y">{}</span> toolbox.ts</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="t-next" id="tab-next"><span class="k-g">→</span> next.md</button>
+          </div>
+
+          <div class="ide-pane" role="tabpanel" id="t-build" aria-labelledby="tab-build">
+            <ul class="build">
+              <li><b>Easy to change.</b> Design patterns and SOLID, so the next feature is a small addition, not a rewrite. My payment gateway layer turned "touch core logic" into "drop in a plug-in".</li>
+              <li><b>Correct when things fail.</b> Duplicate webhooks, retries that could charge twice, tenants racing for one order number: idempotency, state machines and event-driven flows keep it right.</li>
+              <li><b>Ideas I ship.</b> Outside work I build my own products end to end, like <a href="https://resumesmith.in" target="_blank" rel="noopener">ResumeSmith</a>, a free resume builder I designed, built and deployed solo.</li>
+            </ul>
+          </div>
+
+          <div class="ide-pane" role="tabpanel" id="t-tools" aria-labelledby="tab-tools" hidden>
+<pre class="ts"><span class="k-b">const</span> <span class="k-y">toolbox</span> = {
+  backend: [<span class="k-g">"Python"</span>, <span class="k-g">"Java"</span>, <span class="k-g">"C++"</span>, <span class="k-g">"SQL"</span>,
+            <span class="k-g">"FastAPI"</span>, <span class="k-g">"Django"</span>, <span class="k-g">"Flask"</span>],
+  systems: [<span class="k-g">"distributed"</span>, <span class="k-g">"microservices"</span>, <span class="k-g">"event-driven"</span>,
+            <span class="k-g">"concurrency"</span>, <span class="k-g">"multi-tenancy"</span>],
+  data:    [<span class="k-g">"PostgreSQL"</span>, <span class="k-g">"MongoDB"</span>, <span class="k-g">"Redis"</span>,
+            <span class="k-g">"Elasticsearch"</span>, <span class="k-g">"Kafka"</span>],
+  cloud:   [<span class="k-g">"AWS (SQS, S3, EC2)"</span>, <span class="k-g">"Docker"</span>, <span class="k-g">"Kubernetes"</span>,
+            <span class="k-g">"Sentry"</span>, <span class="k-g">"New Relic"</span>],
+};</pre>
+          </div>
+
+          <div class="ide-pane" role="tabpanel" id="t-next" aria-labelledby="tab-next" hidden>
+            <p>A senior software engineering role on a team that owns hard problems: <b>payments, distributed systems, or AI products running in production</b>. I do my best work with real ownership, from design reviews to production, alongside people who care about getting it right.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- previous About cards, kept in case we want them back -->
+      <template id="about-cards-v1">
       <div class="notes">
         <article class="paper">
           <svg class="pin" viewBox="0 0 50 80"><circle cx="25" cy="22" r="18" fill="#7dcfff" stroke="#c0caf5" stroke-width="3"/><path d="M25 40 V76" stroke="#c0caf5" stroke-width="4" stroke-linecap="round"/></svg>
@@ -95,6 +131,7 @@
           <p class="cta"><a href="#contact">Let's talk →</a> <a data-resume target="_blank" rel="noopener">View résumé ↗</a></p>
         </article>
       </div>
+      </template>
     </section>
 
     <section class="contact" id="contact">
@@ -116,7 +153,6 @@
     </nav>
   </footer>
 
-  <script src="script.js?v=33"></script>
-  <script src="scene.js?v=36"></script>
+  <script src="script.js?v=34"></script>
 </body>
 </html>

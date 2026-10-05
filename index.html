@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=16">
+  <link rel="stylesheet" href="style.css?v=25">
 </head>
 <body>
   <!-- shared SVG patterns -->
@@ -46,10 +46,19 @@
       <div class="hero-text">
         <h1>Gaurav's desk.</h1>
         <p class="tag">Gaurav Bharti; software engineer with <span data-years>4</span>+ years building payment, order and distributed systems at scale. Based in Bengaluru, India.</p>
-      </div>
-
-      <div class="desk">
+        <p class="setup">He's out on a walk right now, so have a look around his setup. The drawers aren't locked, by the way…
+          <svg class="setup-arrow" viewBox="0 0 120 50" aria-hidden="true"><path d="M4 30 C30 6 70 44 108 22" /><path d="M96 14 L109 22 L97 32" /></svg>
+        </p>
         <div class="bot">
+          <svg class="bot-face" viewBox="0 0 150 150" aria-hidden="true">
+            <path d="M75 18 v-10" stroke="#a9b1d6" stroke-width="4"/><circle cx="75" cy="7" r="5" fill="#f7768e"/>
+            <path d="M18 22 h112 l14 -10 h-112 Z" fill="#cdb5fa"/><path d="M130 22 l14 -10 v84 l-14 10 Z" fill="#8a6cc0"/>
+            <rect x="18" y="22" width="112" height="84" rx="8" fill="#bb9af7"/>
+            <rect x="30" y="34" width="88" height="60" rx="6" fill="#1a1b26"/>
+            <g class="bot-eyes"><circle cx="58" cy="58" r="6" fill="#9ece6a"/><circle cx="90" cy="58" r="6" fill="#9ece6a"/></g>
+            <path d="M64 74 q10 9 20 0" fill="none" stroke="#9ece6a" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M62 106 h24 l6 22 h-36 Z" fill="#565f89"/><path d="M44 128 h60 l8 -6 h-60 Z" fill="#7a83b0"/><rect x="44" y="128" width="60" height="7" fill="#414868"/>
+          </svg>
           <div class="bubble" role="status" aria-live="polite">
             <span class="name">BYTE</span>
             <svg class="tail" viewBox="0 0 50 22" preserveAspectRatio="none"><path d="M50 2 Q24 6 2 12 Q24 18 50 20" fill="#16161e" stroke="#c0caf5" stroke-width="2" stroke-linejoin="round"/></svg>
@@ -60,6 +69,9 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="desk">
         <div class="stage-wrap"><div class="stage"></div></div>
         <button class="reset" type="button">Reset Desk
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c0caf5" stroke-width="3" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 3v6h-6"/></svg>
@@ -67,7 +79,7 @@
       </div>
     </section>
 
-    <section class="projects" id="work">
+    <section class="projects view-globe" id="work">
       <h2 class="label doodle">
         <svg class="doodle-stars" viewBox="0 0 60 50" aria-hidden="true"><path d="M20 4 L23 16 L35 19 L23 22 L20 34 L17 22 L5 19 L17 16 Z"/><path d="M46 26 L48 33 L55 35 L48 37 L46 44 L44 37 L37 35 L44 33 Z"/></svg>
         <span class="doodle-text">Featured projects</span>
@@ -75,6 +87,17 @@
         <svg class="doodle-arrow" viewBox="0 0 120 100" aria-hidden="true"><path pathLength="1" d="M6 12 C40 0 82 8 92 38 C98 58 84 70 74 61 C64 52 80 38 96 50 C106 58 110 72 106 88"/><path pathLength="1" d="M95 80 L106 90 L114 77"/></svg>
       </h2>
       <p class="work-intro">A few systems I've designed and owned end to end, from the architecture to production.</p>
+      <div class="view-toggle" role="group" aria-label="Work view">
+        <button type="button" data-v="globe" aria-pressed="true">◍ globe</button>
+        <button type="button" data-v="grid" aria-pressed="false">▦ grid</button>
+      </div>
+      <div class="globe-view">
+        <div class="globe-wrap"><canvas aria-label="Globe with threads from Bengaluru and Gurgaon to the regions I worked with" role="img"></canvas><p class="globe-hint">drag to spin</p></div>
+        <div class="globe-panel">
+          <ol class="job-list"></ol>
+          <article class="card job-card"></article>
+        </div>
+      </div>
       <div class="bento">
 
         <article class="card span-2 accent-green">
@@ -195,7 +218,10 @@
     </nav>
   </footer>
 
-  <script src="script.js?v=16"></script>
-  <script src="desk.js?v=16"></script>
+  <script src="script.js?v=18"></script>
+  <script src="desk.js?v=23"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+  <script src="globe.js?v=12"></script>
 </body>
 </html>
