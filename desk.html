@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gaurav's Desk</title>
+  <meta name="description" content="Gaurav Bharti, software engineer in Bengaluru building payment, order and distributed systems. 4+ years across Wizcommerce, Morgan Stanley and Tata 1mg.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#1a1b26">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gaurav Bharti | Software Engineer">
+  <meta property="og:description" content="Gaurav Bharti, software engineer in Bengaluru building payment, order and distributed systems. 4+ years across Wizcommerce, Morgan Stanley and Tata 1mg.">
+  <meta property="og:url" content="https://realme72.github.io/portfolio-site/">
+  <meta property="og:image" content="https://realme72.github.io/portfolio-site/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=32">
+</head>
+<body>
+  <!-- shared SVG patterns -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="3"/>
+        <feDisplacementMap in="SourceGraphic" scale="2.2"/>
+      </filter>
+      <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+        <line x1="0" y1="0" x2="0" y2="6" stroke="#c0caf5" stroke-width="1" opacity=".35"/>
+      </pattern>
+      <linearGradient id="phoneGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#7dcfff"/><stop offset="1" stop-color="#f7768e"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div class="loader"><span>Getting Gaurav's desk ready</span></div>
+
+  <header class="site-header">
+    <a class="logo" href="./" aria-label="Gaurav Bharti, home">
+      <span class="mascot" data-mascot aria-hidden="true"></span>
+      <span class="prompt"><span class="tilde">~/</span>gaurav<span class="cursor" aria-hidden="true"></span></span>
+    </a>
+    <nav class="nav tabbar" aria-label="Main">
+      <a class="tab tab-work" href="./#work"><span class="tab-icon" aria-hidden="true">{}</span>work<span class="ext">.ts</span></a>
+      <a class="tab tab-about" href="about.html"><span class="tab-icon" aria-hidden="true">#</span>about<span class="ext">.md</span></a>
+      <a class="tab tab-desk active" href="desk.html" aria-current="page"><span class="tab-icon" aria-hidden="true">◫</span>desk<span class="ext">.svg</span></a>
+      <a class="tab tab-contact" href="./#contact"><span class="tab-icon" aria-hidden="true">&gt;_</span>contact<span class="ext">.sh</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Gaurav's desk.</h1>
+        <p class="tag">Gaurav Bharti; software engineer with <span data-years>4</span>+ years building payment, order and distributed systems at scale. Based in Bengaluru, India.</p>
+        <p class="hook">Backend systems are easy to build. He builds them <em>right</em>, where every request, retry and failure matters.</p>
+        <p class="setup">He's out on a walk right now, so have a look around his setup. The drawers aren't locked, by the way…
+          <svg class="setup-arrow" viewBox="0 0 120 50" aria-hidden="true"><path d="M4 30 C30 6 70 44 108 22" /><path d="M96 14 L109 22 L97 32" /></svg>
+        </p>
+        <div class="bot">
+          <svg class="bot-face" viewBox="0 0 150 150" aria-hidden="true">
+            <path d="M75 18 v-10" stroke="#a9b1d6" stroke-width="4"/><circle cx="75" cy="7" r="5" fill="#f7768e"/>
+            <path d="M18 22 h112 l14 -10 h-112 Z" fill="#cdb5fa"/><path d="M130 22 l14 -10 v84 l-14 10 Z" fill="#8a6cc0"/>
+            <rect x="18" y="22" width="112" height="84" rx="8" fill="#bb9af7"/>
+            <rect x="30" y="34" width="88" height="60" rx="6" fill="#1a1b26"/>
+            <g class="bot-eyes"><circle cx="58" cy="58" r="6" fill="#9ece6a"/><circle cx="90" cy="58" r="6" fill="#9ece6a"/></g>
+            <path d="M64 74 q10 9 20 0" fill="none" stroke="#9ece6a" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M62 106 h24 l6 22 h-36 Z" fill="#565f89"/><path d="M44 128 h60 l8 -6 h-60 Z" fill="#7a83b0"/><rect x="44" y="128" width="60" height="7" fill="#414868"/>
+          </svg>
+          <div class="bubble" role="status" aria-live="polite">
+            <span class="name">BYTE</span>
+            <svg class="tail" viewBox="0 0 50 22" preserveAspectRatio="none"><path d="M50 2 Q24 6 2 12 Q24 18 50 20" fill="#16161e" stroke="#c0caf5" stroke-width="2" stroke-linejoin="round"/></svg>
+            <p class="say"></p>
+            <div class="controls">
+              <div class="dots"></div>
+              <span class="count"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="desk">
+        <div class="stage-wrap"><div class="stage"></div></div>
+        <button class="reset" type="button">Reset Desk
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c0caf5" stroke-width="3" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 3v6h-6"/></svg>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Thank you for being here.</span>
+    <nav>
+      <a data-mailto aria-label="Email"><svg viewBox="0 0 24 24" fill="#c0caf5"><path d="M2 5h20v14H2z" opacity=".0"/><path d="M2 6.5 12 13l10-6.5V5H2zM2 8.8V19h20V8.8l-10 6.5z"/></svg></a>
+      <a data-linkedin target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="#c0caf5"><path d="M4 8h4v13H4zM6 2a2.2 2.2 0 1 1 0 4.4A2.2 2.2 0 0 1 6 2zm4 6h3.8v1.8h.1c.5-1 1.8-2.1 3.8-2.1 4 0 4.8 2.6 4.8 6V21h-4v-6.3c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21h-4z"/></svg></a>
+      <a data-github target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="#c0caf5"><path d="M12 1.5a10.5 10.5 0 0 0-3.3 20.5c.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.3-3.5-1.3-.5-1.2-1.2-1.5-1.2-1.5-.9-.7.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.5 1.1 3.1.9.1-.7.4-1.1.7-1.4-2.3-.3-4.8-1.2-4.8-5.2 0-1.1.4-2.1 1.1-2.8-.1-.3-.5-1.4.1-2.8 0 0 .9-.3 2.9 1.1a10 10 0 0 1 5.2 0c2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.5.1 2.8.7.7 1.1 1.7 1.1 2.8 0 4-2.5 4.9-4.8 5.2.4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5A10.5 10.5 0 0 0 12 1.5z"/></svg></a>
+      <a data-resume target="_blank" rel="noopener">Resume</a>
+      <a href="#top" onclick="scrollTo({top:0,behavior:'smooth'});return false">Back to top ↑</a>
+    </nav>
+  </footer>
+
+  <script src="script.js?v=18"></script>
+  <script src="desk.js?v=23"></script>
+</body>
+</html>

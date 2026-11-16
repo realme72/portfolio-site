@@ -81,6 +81,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .tab-work .tab-icon { color: var(--blue); }
 .tab-about .tab-icon { color: var(--yellow); }
 .tab-contact .tab-icon { color: var(--green); }
+.tab-desk .tab-icon { color: var(--pink); }
 .tab::after {
   content: ""; position: absolute; left: 12px; right: 12px; bottom: 4px; height: 2.5px; border-radius: 2px;
   transform: scaleX(0); transition: transform .25s ease;
@@ -88,6 +89,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .tab-work::after { background: var(--blue); }
 .tab-about::after { background: var(--yellow); }
 .tab-contact::after { background: var(--green); }
+.tab-desk::after { background: var(--pink); }
 .tab:hover, .tab.active { color: var(--ink); background: var(--paper); }
 .tab:hover .ext, .tab.active .ext { color: var(--muted); }
 .tab:hover::after, .tab.active::after { transform: scaleX(1); }
@@ -613,4 +615,11 @@ a.paper a { color: var(--cyan); text-decoration-thickness: 2px; }
   .email { font-size: clamp(26px, 7.4vw, 40px); overflow-wrap: anywhere; padding: 0 16px; }
   .prompt { white-space: nowrap; font-size: 14px; }
   .logo { padding: 8px 12px 8px 8px; gap: 6px; }
+}
+
+/* four tabs on a phone: tighter tabs, logo shows just the mascot */
+@media (max-width: 480px) {
+  .tab { font-size: 12.5px; padding: 8px 8px 11px; }
+  .tab::after { left: 8px; right: 8px; }
+  .logo .prompt { display: none; }
 }
