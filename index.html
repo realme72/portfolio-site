@@ -207,6 +207,67 @@
           </div>
         </article>
 
+        <a class="card span-2 accent-purple" href="https://github.com/realme72/payweave" target="_blank" rel="noopener">
+          <header class="win"><i></i><i></i><i></i><span>payweave/manifest.toml</span><em>GitHub ↗</em></header>
+          <div class="card-body split">
+            <div>
+              <p class="metric small">PayWeave <span class="arrow">↗</span></p>
+              <h3>Automated payment gateway platform</h3>
+              <p>Hand it a gateway's API docs and an agent reads them with RAG, maps them onto one common payment model and writes a manifest where <b>every field cites its source</b>. Schema checks, contract tests and sandbox runs gate it before it plugs into a single API. The AI only works at build time and never sits in the payment path.</p>
+              <ul class="tags"><li>agents</li><li>RAG</li><li>pgvector</li><li>OpenTelemetry</li></ul>
+            </div>
+            <pre class="code" aria-hidden="true"><span class="k-m"># docs → verified gateway</span>
+read     <span class="k-c">→</span> <span class="k-g">razorpay openapi.json</span>
+plan     <span class="k-c">→</span> charge, refund, void
+generate <span class="k-c">→</span> manifest <span class="k-m">(cited)</span>
+verify   <span class="k-c">→</span> <span class="k-g">contract ✓ sandbox ✓</span>
+weave    <span class="k-c">→</span> <span class="k-y">REGISTRY</span>[<span class="k-g">"razorpay"</span>]</pre>
+          </div>
+        </a>
+
+        <a class="card accent-pink" href="https://github.com/realme72/sentinel-ai" target="_blank" rel="noopener">
+          <header class="win"><i></i><i></i><i></i><span>sentinel/triage.py</span><em>GitHub ↗</em></header>
+          <div class="card-body">
+            <p class="metric">61×<small> fewer tickets</small></p>
+            <h3>Sentinel-AI</h3>
+            <p>Agentic vulnerability triage: <b>103k findings</b> across 500 hosts become 1,705 fix actions. SLA dates come from deterministic rules, never the model, and a non-LLM grounding check blocks any made-up patch version.</p>
+            <div class="pipe" aria-hidden="true"><span>findings</span><b>→</b><span>risk + SLA</span><b>→</b><span class="ok">1 ticket / fix</span></div>
+            <ul class="tags"><li>LangGraph</li><li>hybrid RAG</li><li>evals</li></ul>
+          </div>
+        </a>
+
+        <a class="card accent-cyan" href="https://github.com/realme72/LLM-Document-Update-" target="_blank" rel="noopener">
+          <header class="win"><i></i><i></i><i></i><span>docupdate/report.json</span><em>GitHub ↗</em></header>
+          <div class="card-body">
+            <p class="metric">10k+<small> word docs</small></p>
+            <h3>LLM-driven document updates</h3>
+            <p>Applies plain-English edits to large PDFs and Markdown by rewriting <b>only the affected sections</b>, with validation and rollback so a bad edit is reported, not silently applied.</p>
+            <pre class="term" aria-hidden="true"><span class="k-y">"+10% pricing"</span>      <span class="k-g">applied</span>
+<span class="k-y">"drop legacy API"</span>   <span class="k-g">applied</span>
+<span class="k-y">"fix clause 9"</span>       <span class="k-r">not_found</span></pre>
+            <ul class="tags"><li>FastAPI</li><li>LLMs</li><li>async</li></ul>
+          </div>
+        </a>
+
+        <a class="card span-2 accent-yellow" href="https://github.com/realme72/prepradar" target="_blank" rel="noopener">
+          <header class="win"><i></i><i></i><i></i><span>prepradar run zemoso --track Backend</span><em>GitHub ↗</em></header>
+          <div class="card-body split">
+            <div>
+              <p class="metric small">PrepRadar <span class="arrow">↗</span></p>
+              <h3>Real interview questions, by company</h3>
+              <p>Ask for a company, role and year, and a LangGraph pipeline searches the web for first-hand interview write-ups, extracts the questions, dedupes them with embeddings and sorts them into DSA, LLD, HLD and more. <b>Every question links back to its source.</b></p>
+              <ul class="tags"><li>LangGraph</li><li>pgvector</li><li>web scraping</li><li>React</li></ul>
+            </div>
+            <pre class="code" aria-hidden="true">check_cache <span class="k-c">→</span> <span class="k-m">miss</span>
+search <span class="k-c">→</span> fetch <span class="k-c">→</span> extract
+embed + dedupe <span class="k-c">→</span> <span class="k-g">report</span>
+
+<span class="k-p">DSA</span>  LRU cache with TTL   <span class="k-m">[S3]</span>
+<span class="k-b">LLD</span>  parking lot          <span class="k-m">[S7]</span>
+<span class="k-y">HLD</span>  rate limiter         <span class="k-m">[S1]</span></pre>
+          </div>
+        </a>
+
       </div>
     </section>
 
