@@ -63,7 +63,7 @@
       tags: ["full stack", "shipped"],
     },
     {
-      id: "payweave", name: "PayWeave", role: "Automated payment gateway platform", when: "GitHub ↗", years: "open source", color: C.purple, base: "blr", solo: true,
+      id: "payweave", name: "PayWeave", role: "Automated payment gateway platform", when: "GitHub ↗", years: "docs → gateway", color: C.purple, base: "blr", solo: true,
       team: "one API for every gateway", link: "https://github.com/realme72/payweave", file: "payweave/manifest.toml",
       points: [
         "Give it a gateway's API docs: an agent reads them with <b>RAG</b> and writes an integration where <b>every field cites its source</b>.",
@@ -73,7 +73,7 @@
       tags: ["agents", "RAG", "OpenTelemetry"],
     },
     {
-      id: "sentinel-ai", name: "Sentinel-AI", role: "Agentic vulnerability triage", when: "GitHub ↗", years: "open source", color: C.pink, base: "blr", solo: true,
+      id: "sentinel-ai", name: "Sentinel-AI", role: "Agentic vulnerability triage", when: "GitHub ↗", years: "findings → fixes", color: C.pink, base: "blr", solo: true,
       team: "500-host fleet", link: "https://github.com/realme72/sentinel-ai", file: "sentinel/triage.py",
       points: [
         "<b>103k findings</b> across 500 hosts turned into <b>1,705 fix actions</b>: 61× fewer tickets.",
@@ -83,7 +83,7 @@
       tags: ["LangGraph", "hybrid RAG", "evals"],
     },
     {
-      id: "docupdate", name: "LLM Doc Updates", role: "LLM-driven document updates", when: "GitHub ↗", years: "open source", color: C.cyan, base: "blr", solo: true,
+      id: "docupdate", name: "LLM Doc Updates", role: "LLM-driven document updates", when: "GitHub ↗", years: "prompt → edit", color: C.cyan, base: "blr", solo: true,
       team: "PDF & Markdown", link: "https://github.com/realme72/LLM-Document-Update-", file: "docupdate/report.json",
       points: [
         "Applies plain-English edits to <b>10k+ word</b> PDFs and Markdown, rewriting <b>only the affected sections</b>.",
@@ -93,8 +93,8 @@
       tags: ["FastAPI", "LLMs", "async"],
     },
     {
-      id: "prepradar", name: "PrepRadar", role: "Real interview questions, by company", when: "GitHub ↗", years: "open source", color: C.yellow, base: "blr", solo: true,
-      team: "interview write-ups", link: "https://github.com/realme72/prepradar", file: "prepradar run --track Backend",
+      id: "prepradar", name: "PrepRadar", role: "Real interview questions, by company", when: "live", years: "idea → live", color: C.yellow, base: "blr", solo: true, live: true,
+      team: "interview write-ups", link: "https://prepradar.prepradar-worker.workers.dev/",
       points: [
         "A <b>LangGraph</b> pipeline finds first-hand interview write-ups and extracts the questions asked.",
         "Dedupes with embeddings and sorts into <b>DSA, LLD, HLD</b>, backend and more.",
@@ -170,7 +170,7 @@
   const list = view.querySelector(".job-list");
   const card = view.querySelector(".job-card");
   const firstSolo = JOBS.findIndex((j) => j.solo);
-  list.innerHTML = JOBS.map((j, i) => `${i === firstSolo ? '<li class="list-label">side projects</li>' : ""}<li${j.solo ? ' class="side"' : ""}><button type="button" data-i="${i}" style="--c:${j.color}">
+  list.innerHTML = JOBS.map((j, i) => `${i === firstSolo ? '<li class="list-label">projects</li>' : ""}<li${j.solo ? ' class="side"' : ""}><button type="button" data-i="${i}" style="--c:${j.color}">
       <span class="dot"></span><b>${j.name}</b><small>${j.years}</small></button></li>`).join("");
   const buttons = [...list.querySelectorAll("button")];
 
