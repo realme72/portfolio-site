@@ -329,6 +329,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
   background: transparent; border: 1.5px solid var(--line); border-radius: 12px; transition: border-color .25s, background .25s; }
 .job-list button:hover { border-color: color-mix(in srgb, var(--c) 45%, var(--line)); }
 .job-list button[aria-pressed="true"] { border-color: color-mix(in srgb, var(--c) 70%, var(--line)); background: color-mix(in srgb, var(--c) 9%, var(--paper)); }
+.job-list .list-label { margin: 8px 0 -2px 4px; font: 12px "JetBrains Mono", ui-monospace, monospace; color: var(--muted); }
+.job-list .side button { padding: 7px 16px; }
+.job-list .side b { font-size: 16px; }
 .job-list .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--c); box-shadow: 0 0 10px var(--c); }
 .job-list b { font-size: 19px; font-weight: 700; color: #fff; }
 .job-list small { margin-left: auto; font: 12px "JetBrains Mono", ui-monospace, monospace; color: var(--muted); }

@@ -7,7 +7,7 @@
 
   const css = getComputedStyle(document.documentElement);
   const color = (v) => css.getPropertyValue(v).trim();
-  const C = { ink: color("--ink"), muted: color("--muted"), green: color("--green"), pink: color("--pink"), yellow: color("--yellow"), cyan: color("--cyan"), blue: color("--blue") };
+  const C = { ink: color("--ink"), muted: color("--muted"), green: color("--green"), pink: color("--pink"), yellow: color("--yellow"), cyan: color("--cyan"), blue: color("--blue"), purple: color("--purple") };
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // ---------- data ----------
@@ -54,13 +54,53 @@
       tags: ["asyncio", "performance", "system design"],
     },
     {
-      id: "resumesmith", name: "ResumeSmith", role: "Where my ideas come to life", when: "live", years: "idea → live", color: C.blue, base: "blr", india: true, solo: true,
+      id: "resumesmith", name: "ResumeSmith", role: "Where my ideas come to life", when: "live", years: "idea → live", color: C.blue, base: "blr", india: true, solo: true, live: true,
       team: "users across India", link: "https://resumesmith.in",
       points: [
         "A free resume builder with real-time preview and <b>PDF/DOCX export</b>.",
         "Designed, built and deployed <b>solo</b>, from idea to production.",
       ],
       tags: ["full stack", "shipped"],
+    },
+    {
+      id: "payweave", name: "PayWeave", role: "Automated payment gateway platform", when: "GitHub ↗", years: "open source", color: C.purple, base: "blr", solo: true,
+      team: "one API for every gateway", link: "https://github.com/realme72/payweave", file: "payweave/manifest.toml",
+      points: [
+        "Give it a gateway's API docs: an agent reads them with <b>RAG</b> and writes an integration where <b>every field cites its source</b>.",
+        "Schema checks, contract tests and sandbox runs gate each gateway before it plugs into <b>one unified API</b> (Strategy + Registry).",
+        "The AI only works at build time and <b>never sits in the payment path</b>.",
+      ],
+      tags: ["agents", "RAG", "OpenTelemetry"],
+    },
+    {
+      id: "sentinel-ai", name: "Sentinel-AI", role: "Agentic vulnerability triage", when: "GitHub ↗", years: "open source", color: C.pink, base: "blr", solo: true,
+      team: "500-host fleet", link: "https://github.com/realme72/sentinel-ai", file: "sentinel/triage.py",
+      points: [
+        "<b>103k findings</b> across 500 hosts turned into <b>1,705 fix actions</b>: 61× fewer tickets.",
+        "SLA dates come from deterministic rules, never the model; a <b>non-LLM grounding check</b> blocks made-up patch versions.",
+        "Hybrid retrieval (lexical + pgvector/Qdrant) so exact CVE IDs never get mixed up.",
+      ],
+      tags: ["LangGraph", "hybrid RAG", "evals"],
+    },
+    {
+      id: "docupdate", name: "LLM Doc Updates", role: "LLM-driven document updates", when: "GitHub ↗", years: "open source", color: C.cyan, base: "blr", solo: true,
+      team: "PDF & Markdown", link: "https://github.com/realme72/LLM-Document-Update-", file: "docupdate/report.json",
+      points: [
+        "Applies plain-English edits to <b>10k+ word</b> PDFs and Markdown, rewriting <b>only the affected sections</b>.",
+        "Validation and rollback: a bad edit is reported, never silently applied.",
+        "Runs as a CLI or a <b>FastAPI</b> service with bounded async concurrency.",
+      ],
+      tags: ["FastAPI", "LLMs", "async"],
+    },
+    {
+      id: "prepradar", name: "PrepRadar", role: "Real interview questions, by company", when: "GitHub ↗", years: "open source", color: C.yellow, base: "blr", solo: true,
+      team: "interview write-ups", link: "https://github.com/realme72/prepradar", file: "prepradar run --track Backend",
+      points: [
+        "A <b>LangGraph</b> pipeline finds first-hand interview write-ups and extracts the questions asked.",
+        "Dedupes with embeddings and sorts into <b>DSA, LLD, HLD</b>, backend and more.",
+        "<b>Every question links back to its source.</b>",
+      ],
+      tags: ["LangGraph", "pgvector", "scraping"],
     },
   ];
 
@@ -129,7 +169,8 @@
   // ---------- panel ----------
   const list = view.querySelector(".job-list");
   const card = view.querySelector(".job-card");
-  list.innerHTML = JOBS.map((j, i) => `<li><button type="button" data-i="${i}" style="--c:${j.color}">
+  const firstSolo = JOBS.findIndex((j) => j.solo);
+  list.innerHTML = JOBS.map((j, i) => `${i === firstSolo ? '<li class="list-label">side projects</li>' : ""}<li${j.solo ? ' class="side"' : ""}><button type="button" data-i="${i}" style="--c:${j.color}">
       <span class="dot"></span><b>${j.name}</b><small>${j.years}</small></button></li>`).join("");
   const buttons = [...list.querySelectorAll("button")];
 
@@ -140,7 +181,7 @@
     const j = JOBS[i];
     buttons.forEach((b, k) => b.setAttribute("aria-pressed", k === i));
     card.style.setProperty("--accent", j.color);
-    card.innerHTML = `<header class="win"><i></i><i></i><i></i><span>${j.link ? j.link.replace("https://", "") : `work/${j.id}.md`}</span><em${j.link ? ' class="live-dot"' : ""}>${j.when}</em></header>
+    card.innerHTML = `<header class="win"><i></i><i></i><i></i><span>${j.file || (j.link ? j.link.replace("https://", "") : `work/${j.id}.md`)}</span><em${j.live ? ' class="live-dot"' : ""}>${j.when}</em></header>
       <div class="card-body">
         <h3>${j.link ? `<a href="${j.link}" target="_blank" rel="noopener">${j.name} <span class="at">↗</span></a>` : `${j.role} <span class="at">@</span> ${j.name}`}</h3>
         ${j.via || j.link ? `<p class="via">${j.via || j.role}</p>` : ""}
